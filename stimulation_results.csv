@@ -1,0 +1,15 @@
+Round No,Node,Phase,Parent,Recent,Color,Next,Options,Target Values,MIS Nodes
+1,v,forward,,0,red,u,"['u', 'w', 'x', 'z']","['blue', 'black', 'black', 'black']",['v']
+2,u,forward,v,2,blue,w,"['v', 'w', 'y']","['red', 'blue', 'black']",['v']
+3,w,forward,u,4,blue,t,"['t', 'u', 'v', 'x', 'z']","['red', 'blue', 'red', 'black', 'black']","['v', 't']"
+4,t,forward,w,1,red,x,"['w', 'x']","['blue', 'blue']","['v', 't']"
+5,x,forward,t,3,blue,y,"['t', 'v', 'w', 'y']","['red', 'red', 'blue', 'red']","['v', 't', 'y']"
+6,y,forward,x,2,red,z,"['u', 'x', 'z']","['blue', 'blue', 'blue']","['v', 't', 'y']"
+7,z,backtrack,y,2,blue,y,"['v', 'w', 'y']","['red', 'blue', 'red']","['v', 't', 'y']"
+8,y,backtrack,x,2,red,z,"['u', 'x', 'z']","['blue', 'blue', 'blue']","['v', 't', 'y']"
+9,x,backtrack,t,3,blue,y,"['t', 'v', 'w', 'y']","['red', 'red', 'blue', 'red']","['v', 't', 'y']"
+10,t,backtrack,w,1,red,x,"['w', 'x']","['blue', 'blue']","['v', 't', 'y']"
+11,w,backtrack,u,4,blue,t,"['t', 'u', 'v', 'x', 'z']","['red', 'blue', 'red', 'blue', 'blue']","['v', 't', 'y']"
+12,u,backtrack,v,2,blue,w,"['v', 'w', 'y']","['red', 'blue', 'red']","['v', 't', 'y']"
+13,v,backtrack,,0,red,u,"['u', 'w', 'x', 'z']","['blue', 'blue', 'blue', 'blue']","['v', 't', 'y']"
+Final,MIS Nodes,,,,,,,,"['v', 't', 'y']"

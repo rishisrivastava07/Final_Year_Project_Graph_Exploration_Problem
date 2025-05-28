@@ -1,0 +1,27 @@
+Round No,Node,Phase,Arrives From,Settled,Color,Parent,Recent,Next,Options,Target Values,MIS Nodes
+1,v,v.phase = forward,None,True,red,None,,u,['u',"['black', 'black', 'black', 'black']",
+1,,v.phase = forward,,,,,,,,,['v']
+2,u,u.phase = forward,v,True,red,v,,w,['v',"['red', 'black', 'black']",
+2,,u.phase = forward,,,,,,,,,['v']
+3,w,w.phase = forward,u,True,red,u,,t,['t',"['black', 'blue', 'red', 'black', 'black']",
+3,,w.phase = forward,,,,,,,,,"['v', 't']"
+4,t,t.phase = forward,w,True,red,w,,x,['w',"['blue', 'black']",
+4,,t.phase = forward,,,,,,,,,"['v', 't']"
+5,x,x.phase = forward,t,True,red,t,,y,['t',"['red', 'red', 'blue', 'black']",
+5,,x.phase = forward,,,,,,,,,"['v', 't', 'y']"
+6,y,y.phase = forward,x,True,red,x,,z,['u',"['blue', 'blue', 'black']",
+6,,y.phase = forward,,,,,,,,,"['v', 't', 'y']"
+7,,z.phase = backtrack,,,,,,,['v',"['red', 'blue', 'red']",
+7,,z.phase = backtrack,,,,,,,,,"['v', 't', 'y']"
+8,,y.phase = backtrack,,,,,,,['u',"['blue', 'blue', 'blue']",
+8,,y.phase = backtrack,,,,,,,,,"['v', 't', 'y']"
+9,,x.phase = backtrack,,,,,,,['t',"['red', 'red', 'blue', 'red']",
+9,,x.phase = backtrack,,,,,,,,,"['v', 't', 'y']"
+10,,t.phase = backtrack,,,,,,,['w',"['blue', 'blue']",
+10,,t.phase = backtrack,,,,,,,,,"['v', 't', 'y']"
+11,,w.phase = backtrack,,,,,,,['t',"['red', 'blue', 'red', 'blue', 'blue']",
+11,,w.phase = backtrack,,,,,,,,,"['v', 't', 'y']"
+12,,u.phase = backtrack,,,,,,,['v',"['red', 'blue', 'red']",
+12,,u.phase = backtrack,,,,,,,,,"['v', 't', 'y']"
+13,,v.phase = backtrack,,,,,,,['u',"['blue', 'blue', 'blue', 'blue']",
+13,,v.phase = backtrack,,,,,,,,,"['v', 't', 'y']"
